@@ -1,0 +1,218 @@
+<html>
+
+  <head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">
+
+  <link rel="stylesheet"
+  href="prism-atom-dark.css"
+  type="text/css"
+  media="screen"
+  />
+
+  <script type="text/javascript" src="prism.js"></script>
+  <script type="text/javascript" src="prism.ruby.js"></script>
+
+  <title>Ladislav Kus</title>
+  <meta name="description" content="Ladislav Kus has solid skills in full-stack development using Ruby, Rails, JavaScript.">
+
+  </head>
+
+  <body>
+
+    <div class="about">
+
+      <ul>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#code" class="nav-link">Code Samples</a></li>
+        <li><a href="#web" class="nav-link">Web Apps</a></li>
+        <li><a href="#skills" class="nav-link">Skills &amp; Tools</a></li>
+        <li class="hire-me"><a href="#hire" class="nav-link">Hire Me</a></li>
+      </ul>
+
+      <div class="frame">
+        <img src="lk_face.JPG" class="photo">
+        <h1> Ladislav Kus </h1>
+        <h2> Workplace and Infrastructure Solution Manager / Web Developer</h2>
+        <hr class="row"/>
+        <p class="bio"> 
+        As a Solution Manager I've been involved in a lot of engagement projects and contributed to the signings of several long term outsourcing contracts in the value of 150+ Mio EUR.
+        A-5-year outlook is to become an experienced full-stack web developer. The first milestone has been to graduate from the coding education program. I'am looking for new opportunities in the web development domain. Read more about my skills below. ...
+        </p>
+      </div>
+    </div>
+
+      <br />
+      <h3 id="code">Code Snippets Examples</h3>
+      <hr class="separator"/>
+      
+      <div class="box">
+        <h4> Depth first search </h4>
+        <p> This code snippet example is from the ruby programm that implements
+        depth first search algorithm to find a particular node in the tree using recursion.
+        <p> 
+      </div>
+      
+      <div class="box">
+      <pre><code class="language-ruby">
+      def dfs(node, searched_node)
+        puts node.payload
+        return self if node.payload == searched_node
+        node.children.each do |child|          
+          found = dfs(child, searched_node)
+          return found if found
+        end
+        return nil
+      end
+      </code></pre>
+      </div>
+     
+      <br class="clear"/>
+      
+      <div class="box">
+      <pre><code class="language-ruby">
+      def bfs(node, searched_node)
+        queue = Queue.new
+        queue.enqueue(node)
+        until queue == []
+          value = queue.dequeue
+          puts value.payload      
+          if value.payload == searched_node
+            return value       
+          else
+            value.children.each do |child|
+              queue.enqueue(child)
+            end
+          end
+        end
+      end
+      </pre></code>
+      </div>
+      
+      <div class="box">
+        <h4> Breath first search </h4>
+        <p> This ruby programm snippet example implements
+        breath first search algorithm to find a particular node in the tree using queue and dequeue process.
+        <p> 
+      </div>
+     
+      <br class="clear"/>
+     
+      <div class="box">
+        <h4> Reverse linked list</h4>
+        <p> This is the core method of the ruby programm which reverses the linked list using mutation.
+        <p> 
+      </div>
+      
+      <div class="box">
+      <pre><code class="language-ruby">
+      def reverse_list(list, previous = nil)
+        next_list_node = list.next_node
+        list.next_node = previous
+        if next_list_node
+          reverse_list(next_list_node, list)
+        else
+          list
+        end
+      end 
+      </pre></code>
+      
+      </div>
+      
+      <br class="clear"/>
+
+      <h3 id="web">Web Apps</h3>
+      <hr class="separator"/>
+
+      <div class="app-box">
+        <h4>Quote Generator</h4>
+        <a href="https://quoteskeeper.herokuapp.com/"><img src="quoteskeeper.PNG" alt="Link to the application" class="full-width"></a>
+        <p> PostgreSQL database powered quotes generator using Ruby on Rails, HTML and CSS. Github used for version control. Launched on Heroku.com.
+        </p>
+      </div>
+
+      <div class="app-box">
+        <h4>Venue Locator</h4>
+        <a href="https://venueloc.herokuapp.com//"><img src="venueloc.PNG" alt="Link to the application" class="full-width"></a>
+        <p> The application for sharing venues experience, integrates with the Google Maps API and includes features like user comments, star ratings, image uploading, and user authentication.
+      </div>
+
+      <div class="app-box">
+        <h4>Two-Sided Course Platform</h4>
+        <a href="https://coursescoper.herokuapp.com//"><img src="coursescoper.PNG" alt="Link to the application" class="full-width">
+        </a>
+        <p>
+        A two-sided, video-streaming course platform that
+        features credit card payment capabilities, user role
+        management, complex user interfaces, and advanced
+        database relationships.
+        </p>
+      </div>
+
+      <div class="app-box">
+        <h4>Message Platform</h4>
+        <a href="http://talksphere.herokuapp.com"><img src="talksphere.PNG" alt="Link to the application" class="full-width"></a>
+        <p>
+         An Instagram like application that was built using industry-standard, test-driven development following numerous red/green refactor cycles.
+         </p>
+      </div>
+
+      <div class="app-box">
+        <h4>Training Sessions Schedule App</h4>
+        <a href="http://club-schedule-system.herokuapp.com"><img src="trainingscheduler.PNG" alt="Link to the application" class="full-width"></a>
+        <p>
+        Scheduling app which integrates with jQuery Datepicker to help users manage enrollments to events such as training sessions.
+        <i> (Under development. ...)</i>
+        </p>
+      </div>
+
+      <div class="app-box">
+        <h4>Chess App - Team Project</h4>
+        <a href="http://camelotchess.herokuapp.com"><img src="chess.PNG" alt="Link to the application" class="full-width"></a>
+        <p>
+        Worked on an agile software development team building
+        a chess application. Under the guidance of a senior software engineer, we had weekly Agile team meetings for code reviews, sprint planning, and feature assignments.
+      </div>
+
+      <br class="clear"/>
+
+      <h3 id="skills"> Skills &amp; Tools </h3>
+      <hr class="separator"/>
+
+      <div class="icons">
+        <img src="github.png" class="icon" />
+        <img src="rubocop.png" class="icon" />
+        <img src="trello.png" class="icon" />
+        <img src="slack.png" class="icon" />
+        <img src="codeship.png" class="icon" />
+
+        <br class="clear" />
+        <img src="skills.png" class="icon"/>
+      </div>
+      
+      <div class="contact-me">
+        <h3 class="contact-headline" id="hire">Contact</h3>
+        <hr class="separator"/>
+        <p class="contact-info">
+          Looking for new opportunities in web development.
+          Please get in touch:
+        <p/>
+        <p>
+          <a href="mailto:lkcz04185@gmail.com" class="mailto">
+          <img src="gmail.png">
+          </a>
+          <a href="https://ch.linkedin.com/in/ladislav-kus-b032829a" class="mailto">
+          <img src="linkedin.png">
+          </a>
+          <a href="https://github.com/lkcz04185" class="mailto">
+          <img src="github_account.png">
+          </a>
+
+        </p>
+
+      </div>
+    </div>
+
+  </body>
+
+</html>
